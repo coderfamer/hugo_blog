@@ -1,6 +1,6 @@
 ---
 title: utf-8 编码
-date: 2022-03-02 15:07:32
+date: 2022-03-01 15:07:32
 categories: ['编程经验']
 tags: ['utf-8']
 draft: false
@@ -15,12 +15,12 @@ UTF-8 （8-bit Unicode Transformation Format）是一种针对**Unicode**的可�
 
 ## 编码方式
 
-| range        | Byte1    | Byte2    | Byte3    | Byte4    |
-| ------------ | -------- | -------- | -------- | -------- |
-| 0000-007F    | 0xxxxxxx |          |          |          |
-| 0080-07FF    | 110xxxxx | 10xxxxxx |          |          |
-| 0800-FFFF    | 1110xxxx | 10xxxxxx | 10xxxxxx |          |
-| 10000-10FFFF | 11110xxx | 10xxxxxx | 10xxxxxx | 10xxxxxx |
+| range          | Byte1    | Byte2    | Byte3    | Byte4    |
+| -------------- | -------- | -------- | -------- | -------- |
+| 0000-007F      | 0xxxxxxx |          |          |          |
+| 0080-07FF      | 110xxxxx | 10xxxxxx |          |          |
+| 0800-FFFF      | 1110xxxx | 10xxxxxx | 10xxxxxx |          |
+| 10000-10FFFFls | 11110xxx | 10xxxxxx | 10xxxxxx | 10xxxxxx |
 
 对于UTF-8字符：
 
