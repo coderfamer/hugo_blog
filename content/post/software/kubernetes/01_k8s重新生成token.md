@@ -1,5 +1,5 @@
 ---
-title:  centos7 离线安装 kubernets (k8s)
+title:  k8s 重新生成 token
 date: 2022-04-23 15:07:32
 categories: ['']
 tags: ['', '', '']
