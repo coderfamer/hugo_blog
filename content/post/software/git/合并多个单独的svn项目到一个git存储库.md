@@ -1,0 +1,61 @@
+---
+title: 合并多个 svn 存储库到一个 git 存储库中
+date: 2022-09-23 15:07:32
+categories: ['']
+tags: ['git']
+draft: false
+---
+
+# 合并多个 svn 存储库到一个 git 存储库中
+
+---
+
+## 简介
+
+合并多个 svn 项目到一个存储库
+
+## 步骤
+
+**在 git 上面创建新的git 仓库**
+
+```shell
+# 首先在 git 上创建一个新的仓库
+mkdir git_project && cd git_project
+git init
+git remote add origin git@192.168.20.98:dpi_tools/ya_env.git # 设置 git 仓库
+git add README.md
+git commit -m "add README"
+git push -u origin master  # 提交 READERME
+```
+
+使用 git svn 检出 svn 项目
+
+```shell
+git svn clone http://svn_server/svn/proj_a  proj_a
+git svn clone http://svn_server/svn/proj_b  proj_b
+```
+
+git 目录添加检出的 svn 项目
+
+```shell
+cd git_project
+git remote add proj_a ../proj_a
+git remote add proe_b ../proj_b
+git pull proj_a
+git pull proj_b
+```
+
+合并检出的项目
+
+```shell
+git branch -avv  # 查看新增的所有分支
+git checkout master
+git merge remote/proj_a/master
+git merge remote/proj_b/master
+git push origin master
+```
+
+
+
+
+
